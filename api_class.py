@@ -1,12 +1,10 @@
 import requests
 from requests.adapters import HTTPAdapter, Retry
-
 import json
 
 #
 
 class API_Connect:
-    
     def __init__(self,
                  retries=5,
                  backoff_factor=1,
@@ -58,5 +56,3 @@ class API_Connect:
         else:
             #
             return self.session.get(self.endpoints[url_key])
-        
-    
