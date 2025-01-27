@@ -35,7 +35,6 @@ class RedditObject:
 
 class Post(RedditObject):
     def __init__(self,
-                 keys:list,
                  obj:dict,
                  ):
         super().__init__()
@@ -46,7 +45,10 @@ class Post(RedditObject):
         self.comments     = []
         #
         super().read_object(obj=obj)
-
+        
+    def get_comments(self):
+        # TODO
+        
 
 #
 
