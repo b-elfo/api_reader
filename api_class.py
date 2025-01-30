@@ -9,6 +9,7 @@ class API_Connect:
                  retries=5,
                  backoff_factor=1,
                  forcelist=[502,503,504],
+                 sleep=10,
                  ):
         #
         self.session = requests.Session()
@@ -25,6 +26,8 @@ class API_Connect:
         #
         self.sort_keys = True
         self.indent = 2
+        #
+        self.sleep = sleep
         
     def add_endpoint(self,
                      url_key,
@@ -56,3 +59,4 @@ class API_Connect:
         else:
             #
             return self.session.get(self.endpoints[url_key])
+        time.sleep(self.sleep)

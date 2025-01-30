@@ -17,8 +17,8 @@ class RedditObject:
         self.report_reasons        = None
         self.total_awards_recieved = None
         
-    def get_listof_attribute(self):
-        attributes = inspect.getmembers(MyClass, lambda a:not(inspect.isroutine(a)))
+    def get_listof_attributes(self):
+        attributes = inspect.getmembers(RedditObject, lambda a:not(inspect.isroutine(a)))
         return [a for a in attributes if not(a[0].startswith('__') and a[0].endswith('__'))]
         
     def read_object(self,
@@ -27,7 +27,10 @@ class RedditObject:
         attrs = self.get_listof_attributes()
         for attr in attrs:
             try:
-                setattr(self,attr,obj[attr])
+                setattr(self,
+                        attr,
+                        obj[attr],
+                        )
             except:
                 pass # TODO
         
@@ -35,8 +38,7 @@ class RedditObject:
 
 class Post(RedditObject):
     def __init__(self,
-                 obj:dict,
-                 ):
+                 obj:dict,):
         super().__init__()
         self.title        = None
         self.body         = None
@@ -48,6 +50,7 @@ class Post(RedditObject):
         
     def get_comments(self):
         # TODO
+        pass
         
 
 #
