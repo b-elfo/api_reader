@@ -6,6 +6,7 @@ import json
 
 class API_Connect:
     def __init__(self,
+                 endpoints:dict=None,
                  retries=5,
                  backoff_factor=1,
                  forcelist=[502,503,504],
@@ -28,6 +29,13 @@ class API_Connect:
         self.indent = 2
         #
         self.sleep = sleep
+        #
+        for key,(url,params) in endpoints.items():
+            self.add_endpoint(url_key=key,
+                              url=url,
+                              param=params,
+                              )
+            
         
     def add_endpoint(self,
                      url_key,
