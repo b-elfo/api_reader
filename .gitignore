@@ -1,4 +1,5 @@
 # 
+api_env/
 data_collect/
 *sandbox.py
 *sandbox.ipynb
