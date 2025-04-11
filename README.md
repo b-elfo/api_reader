@@ -1,28 +1,17 @@
 # api_reader
-This project is a simple Python package that interacts with a PostgreSQL database using SQLAlchemy.
+This project is a simple Python package that contains basic classes and functions for calling APIs. Testing with OpenWeatherMap API. 
 
 ## Installation
-To use this package, ensure you have Python and PostgreSQL installed. You will also need to install the required dependencies. You can do this using pip:
+To use this package, ensure you have Python installed. You will also need to install the required dependencies, which can be done by running:
 
 ```
-pip install sqlalchemy psycopg2
+pip install -r requirements.txt
 ```
+
+in the parent directory
 
 ## Configuration
-Before running the package, update the `DATABASE_URL` in `db_class.py` with your PostgreSQL credentials:
-
-```python
-DATABASE_URL = "postgresql://your_user:your_password@localhost/my_database"
-```
-
-## Usage
-To execute the database operations defined in this package, run the `db_class.py` file:
-
-```
-python db_class.py
-```
-
-This will connect to the database, execute a SELECT query on the `users` table, and print the results.
+To use the package, find an API you wish to use and create an object using the API class creation. Then setup endpoints and begin to call responses.
 
 ## License
 This project is licensed under the MIT License.
